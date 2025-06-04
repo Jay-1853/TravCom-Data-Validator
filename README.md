@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses Google Apps Script to proactively detect and notify about a common data entry error in **TravCom** accounting software: transactions with future dates. It automates daily database checks to ensure cleaner data for analysis in BI tools and warehousing.
+This project uses Google Apps Script to proactively detect and notify about a common data entry error in **TravCom** accounting software used in travel agencies: transactions with future dates. It automates daily database checks to ensure cleaner data for analysis in BI tools and warehousing.
 
 ---
 
@@ -20,11 +20,11 @@ Accountants often manually enter "non-BSP" transactions into TravCom. A frequent
 
 This script automates the tedious daily checks:
 
-1.  **Connects:** Establishes a secure connection to your TravCom SQL Server database.
-2.  **Queries:** Runs a targeted SQL query to find `ARInvoiceDetails` where `TransactionDate` is in the future and `TransactionType` is `1` (non-BSP).
+1.  **Connects:** Establishes a secure connection to the TravCom SQL Server database or another database of your choosing.
+2.  **Queries:** Runs a targeted SQL query to find transactions where `TransactionDate` is in the future and `TransactionType` is `1` (a valid transaction).
 3.  **Notifies:** If errors are found, it generates a clear, HTML email.
 4.  **Highlights:** The email includes a table detailing every problematic transaction, crucially showing **which accountant made the entry**.
-5.  **Alerts:** Sends this alert to the `finance-team@example.com` inbox every morning (Note: the email quoted is a placeholder, not an actual email).
+5.  **Alerts:** Sends this alert to the finance team's email inbox every morning.
 
 ---
 
@@ -33,7 +33,7 @@ This script automates the tedious daily checks:
 Since implementation, the results have been significant:
 
 *   📈 **Errors Drastically Reduced:** Daily, targeted alerts prompt immediate corrections, significantly lowering error frequency.
-*   ✅ **Enhanced Data Accuracy:** Power BI dashboards now reflect reliable data, improving financial insights.
+*   ✅ **Enhanced Data Accuracy:** Power BI dashboards and data warehouse now reflect reliable data, improving financial insights.
 *   🚀 **Increased Team Efficiency:** No more manual checks; accountants can focus on high-value tasks.
 *   🤝 **Improved Accountability:** Identifying the responsible accountant fosters better data entry practices.
 
