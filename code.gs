@@ -1,4 +1,4 @@
-function checkFutureTransactionsAndNotify() {
+function CheckFutureTransactionsAndNotify() {
   // This section sets up the connection to the database.
   // It uses a JDBC connection to talk to a SQL Server, providing the host, database name, username, and password.
   const conn = Jdbc.getConnection(
